@@ -1,0 +1,70 @@
+{
+  "name": "@vorionsys/n8n-nodes-cognigate",
+  "version": "0.1.0",
+  "description": "n8n community node for Cognigate — AI agent trust scoring, capability enforcement, and audit proof via the BASIS standard",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "cognigate",
+    "vorion",
+    "ai-governance",
+    "trust-scoring",
+    "basis",
+    "ai-agent"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://cognigate.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorionsys/n8n-nodes-cognigate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vorionsys/n8n-nodes-cognigate/issues"
+  },
+  "author": {
+    "name": "Vorion LLC",
+    "email": "hello@vorion.org"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.cjs",
+    "dev": "tsc --watch",
+    "test": "echo \"No tests configured\"",
+    "prepublishOnly": "npm run build",
+    "changeset:version": "changeset version && npm install --package-lock-only",
+    "changeset:release": "changeset publish"
+  },
+  "files": [
+    "dist",
+    "nodes",
+    "credentials",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CognigateApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Cognigate/Cognigate.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@types/node": "^20.19.0",
+    "n8n-workflow": "*",
+    "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
