@@ -23,7 +23,7 @@ jobs:
           node-version: 20
       - name: Update npm (OIDC trusted publishing requires npm >= 11.5.1)
         run: npm install -g npm@latest
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - run: npm run build
       - run: npm audit signatures
       - name: Create Version PR (if changesets present)
